@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --main: #65bb70;
+    --x: #ff3737;
+    --o: #00a6ff;
+}
+
+body {
+    background: #65bb70;
+    transition: background 1s;
+}
+
+body.X {
+    background: var(--x)
+}
+
+body.O {
+    background: var(--o)
+}
+
+body.draw {
+    background: var(--main);
+}
+
+.select-box, .play-field, .result {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.tittle span {
+    color: #a9a9a9;
+}
+
+.select-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5vh black;
+    border-radius: 0.5vh;
+    background: white;
+    border: 0.1vh solid rgba(255, 255, 255, 0.5);
+    padding: 2vh 2.5vh 2vh;
+    max-width: 33vh;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.play-field.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.select-box header {
+    font-size: 2.3vh;
+    font-weight: 600;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid #ccc;
+}
+
+.madeby {
+    text-decoration: underline;
+    font-size: 1.2vh;
+    color: #cecece;
+    transition: color 450ms;
+}
+
+.madeby:hover {
+    color: #696969;
+}
+
+.madebydiv {
+    text-align: center;
+}
+
+.select-box .tittle {
+    font-size: 1.8vh;
+    font-weight: 500;
+    margin: 2vh 0;
+}
+
+.select-box .teams {
+    display: flex;
+    width: 100%;
+}
+
+.teams button, .playWithFriends {
+    width: 100%;
+    font-size: 1.8vh;
+    font-weight: 500;
+    padding: 0.8vh 0;
+    border: none;
+    background: #e1e1e1;
+    border-radius: 1vh;
+    outline: none;
+    transition: background 500ms, color 500ms;
+}
+
+.teams button:hover, .playWithFriends:hover {
+    background: #65bb70;
+    cursor: pointer;
+    color: white;
+}
+
+.teams button.playerX {
+    margin-right: 0.5vh;
+    cursor: pointer;
+}
+
+.teams button.playerO {
+    margin-left: 0.5vh;
+    cursor: pointer;
+}
+
+.separator {
+    height: 0.1vh;
+    width: 100%;
+    margin: 2.5vh 0;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.separator::before {
+    font-size: 2.2vh;
+    content: "or";
+    color: #ccc;
+    padding: 0 1.5vh;
+    background: #fff;
+}
+
+.info {
+    background: #fff;
+    padding: 0.7vh;
+    border-radius: 0.5vh;
+    box-shadow: 0 0 1vh #606060;
+    text-align: center;
+}
+
+.turn {
+    font-size: 2vh;
+    margin-top: 1.5vh;
+}
+
+.play-field section {
+    display: flex;
+}
+
+.play-field section span {
+    display: block;
+    height: 8vh;
+    box-shadow: 0 0 1vh #606060;
+    width: 8vh;
+    background: #fff;
+    margin: 0.3vh;
+    border-radius: 0.5vh;
+    line-height: 8vh;
+    font-size: 4vh;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(0,0,0,0);
+    transition: 0.5s;
+}
+
+.play-field section span:hover {
+    background: #d7d7d7;
+    transform: scale(1.05);
+}
+
+.play-field section span.X {
+    color: var(--x)
+}
+
+.play-field section span.O {
+    color: var(--o)
+}
+
+.play-field .info .team {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.play-field {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
+    text-align: center;
+}
+
+.play-field .info span {
+    width: 100%;
+    border-radius: 0.5vh;
+    padding: 0.7vh 0;
+    font-size: 2vh;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.play-field .info span.X.active {
+    color: white;
+    background: linear-gradient(to right, #ff6715, #ff3737);
+}
+
+.play-field .info span.O.active {
+    color: white;
+    background: linear-gradient(to right, #00e1ff, #00a6ff);
+}
+
+.play-field .area {
+    margin-top: 2vh;
+}
+
+.info .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: #606060;
+    border-radius: 0.5vh;
+    z-index: 2;
+}
+
+.result {
+    background: #fff;
+    padding: 2vh;
+    border-radius: 0.5vh;
+    max-width: 37vh;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.result.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result .victory span {
+    font-weight: 600;
+    margin: 0 0.5vh;
+}
+
+.result .victory {
+    display: flex;
+    justify-content: center;
+    font-size: 3vh;
+}
+
+.result .btn {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.result .btn button {
+    width: 100%;
+    font-size: 1.8vh;
+    font-weight: 500;
+    padding: 0.8vh 0;
+    border: none;
+    background: #e1e1e1;
+    border-radius: 1vh;
+    outline: none;
+    transition: background 500ms, color 500ms;
+}
+
+.result .btn button.X:hover {
+    color: white;
+    background: var(--x);
+}
+
+.result .btn button.O:hover {
+    color: white;
+    background: var(--o);
+}
+
+.result .btn button.draw:hover {
+    color: white;
+    background: var(--main);
+}

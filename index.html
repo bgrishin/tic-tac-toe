@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body onload="placeControllers()">
+    <div class="select-box">
+        <header>Tic Tac Toe</header>
+        <div class="tittle">Select the team <span>(with bot)</span></div>
+        <div class="teams">
+            <button class="playerX">X</button>
+            <button class="playerO">O</button>
+        </div>
+        <div class="separator"></div>
+        <button class="playWithFriends">Play with friend</button>
+        <div class="madebydiv">
+            <a class="madeby" href="https://github.com/VERHOVNA-RADA?tab=repositories">Made by Bogdan Grishin</a>
+        </div>
+    </div>
+    <div class="play-field">
+        <div class="info">
+            <div class="team">
+                <span class="X">X</span>
+                <span class="O">O</span>
+            </div>
+            <h1 class="turn">O's Turn</h1>
+        </div>
+        <div class="area">
+            <section>
+                <span class="box1"></span>
+                <span class="box2"></span>
+                <span class="box3"></span>
+            </section>
+            <section>
+                <span class="box4"></span>
+                <span class="box5"></span>
+                <span class="box6"></span>
+            </section>
+            <section>
+                <span class="box7"></span>
+                <span class="box8"></span>
+                <span class="box9"></span>
+            </section>
+        </div>
+    </div>
+    <div class="result">
+        <div class="victory"></div>
+        <div class="btn">
+            <button>Replay</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/1a6c635495.js" crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
