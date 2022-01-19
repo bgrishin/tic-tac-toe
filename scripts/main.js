@@ -132,7 +132,6 @@ function bot() {
         } catch (e) {
             console.log("end")
         }
-        playerSign = "X"
     }
 }
 
