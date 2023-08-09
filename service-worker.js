@@ -2,7 +2,7 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('pwa-cache').then(cache => {
             return cache.addAll([
-                '/',
+                '/tic-tac-toe/',
                 'index.html',
                 'manifest.json'
             ]);
