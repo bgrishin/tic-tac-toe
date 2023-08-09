@@ -2,7 +2,7 @@
   "name": "Tic-Tac-Toe",
   "short_name": "TTT",
   "description": "A simple Tic-Tac-Toe",
-  "start_url": "/",
+  "start_url": "/tic-tac-toe/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
